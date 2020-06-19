@@ -3,6 +3,7 @@
 DSA PROJECT
 BY: GAGAN CHORDIA
 REG.NO: 19BCE0788
+Use CodeBlocks or DevC++
 */
 
 #include<stdio.h>
@@ -209,10 +210,58 @@ int fiftyFifty(int n, int countf){ // eliminates any 2 wrong options for a parti
                 printf("\n\n\n\n\n\t\t\tLinkedIn is a social networking site mainly aimed at whom?\n\n");
                 printf("\t\t\tA. \n\t\t\tB.Professionals \n\t\t\tC. \n\t\t\tD.Students\n\n\n");
                 break;
+            case 29:
+                printf("\n\n\n\n\n\t\t\tWhich is an ultraportable computer most used for simple computing and web browsing?\n\n");
+                printf("\t\t\tA. \n\t\t\tB.Mainframe \n\t\t\tC.Netbook \n\t\t\tD.\n\n\n");
+                break;
+            case 30:
+                printf("\n\n\n\n\n\t\t\tA flow of electric charge is known as _________.\n\n");
+                printf("\t\t\tA. \n\t\t\tB.Current \n\t\t\tC.Conductance \n\t\t\tD.\n\n\n");
+                break;
+            case 31:
+                printf("\n\n\n\n\n\t\t\tRobert Frost's poem \"The Road Not Taken\" refers to which of these?\n\n");
+                printf("\t\t\tA.Choice not made \n\t\t\tB. \n\t\t\tC. \n\t\t\tD.Being Indecisive\n\n\n");
+                break;
+            case 32:
+                printf("\n\n\n\n\n\t\t\tThe earliest surviving man-made sculpture is made of ___________.\n\n");
+                printf("\t\t\tA. \n\t\t\tB. \n\t\t\tC.Stone \n\t\t\tD.Wood\n\n\n");
+                break;
+            case 33:
+                printf("\n\n\n\n\n\t\t\tWhat type of pastry would you use in a Bakewell tart?\n\n");
+                printf("\t\t\tA. \n\t\t\tB.Filo \n\t\t\tC. \n\t\t\tD.Shortcrust\n\n\n");
+                break;
+            case 34:
+                printf("\n\n\n\n\n\t\t\tWhich liquid is rice cooked in to make rice pudding?\n\n");
+                printf("\t\t\tA.Milk \n\t\t\tB. \n\t\t\tC.Water \n\t\t\tD.\n\n\n");
+                break;
+            case 35:
+                printf("\n\n\n\n\n\t\t\tWhich of these can be used to drive an electrical generator?\n\n");
+                printf("\t\t\tA.Carbon \n\t\t\tB. \n\t\t\tC. \n\t\t\tD.Steam\n\n\n");
+                break;
+            case 36:
+                printf("\n\n\n\n\n\t\t\tSailors ate oranges and limes to prevent which disease?\n\n");
+                printf("\t\t\tA. \n\t\t\tB.Measles \n\t\t\tC. \n\t\t\tD.Scurvy\n\n\n");
+                break;
+            case 37:
+                printf("\n\n\n\n\n\t\t\tCroquet is played using? \n\n");
+                printf("\t\t\tA. \n\t\t\tB. \n\t\t\tC.Club \n\t\t\tD.Mallet\n\n\n");
+                break;
+            case 38:
+                printf("\n\n\n\n\n\t\t\tAfter which sailor Columbia was named?\n\n");
+                printf("\t\t\tA. \n\t\t\tB.Christopher Columbus \n\t\t\tC.Juan Ponce de Leon \n\t\t\tD.\n\n\n");
+                break;
+            case 39:
+                printf("\n\n\n\n\n\t\t\tGuess the international bank from the image.\n\n");
+                printf("\t\t\tA. \n\t\t\tB.Royal Bank of Scotland \n\t\t\tC. \n\t\t\tD.Bank of Scotland\n\n\n");
+                break;
+            case 40:
+                printf("\n\n\n\n\n\t\t\tGuess the country from the video.\n\n");
+                printf("\t\t\tA.South Africa \n\t\t\tB. \n\t\t\tC.Russia \n\t\t\tD.\n\n\n");
+                break;
         }
     }
     else{
-        printf("\n\n\n\n\n\t\t\tWrong Answer.\n\t\t\tPress Enter to view the score.");
+        printf("\n\n\n\n\n\t\t\tWrong Answer.\n\t\t\tPress Enter to view the score.\n\n\n");
     }
 }
 int replace(int countr) //replaces the current question with a new question
@@ -223,7 +272,7 @@ int replace(int countr) //replaces the current question with a new question
         timer();
     }
     else{
-        printf("\n\n\n\n\n\t\t\tWrong Answer.\n\t\t\tPress any Enter to view the score.");
+        printf("\n\n\n\n\n\t\t\tWrong Answer.\n\t\t\tPress any Enter to view the score.\n\n\n");
     }
 }
 
@@ -692,7 +741,7 @@ int main()
                     {
                         char ch;
                         system("cls");
-                        n=rand()%26+1;
+                        n=rand()%40+1;
                         switch(n)
                         {
                         case 1:
@@ -2363,6 +2412,8 @@ int main()
                             }
                         case 25:
                             printf("\n\n\n\n\n\t\t\tIdentify the Indian petroleum company.\n\n");
+                            system("start quiz8.jpg");
+                            getch();
                             printf("\t\t\t.A.Bharat Petroleum \n\t\t\tB.Hind Petroleum \n\t\t\tC.Indian Oil \n\t\t\tD.Reliance Petroleum Ltd.\n\n\n");
                             if(countf==0){
                                 printf("\t\t\tF for 50:50\n");
@@ -2635,6 +2686,838 @@ int main()
                             {
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Professionals'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 29:
+                            printf("\n\n\n\n\n\t\t\tWhich is an ultraportable computer most used for simple computing and web browsing?\n\n");
+                            printf("\t\t\tA.Gameboy \n\t\t\tB.Mainframe \n\t\t\tC.Netbook \n\t\t\tD.Laptop\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='C')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='C')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Netbook'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Netbook'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 30:
+                            printf("\n\n\n\n\n\t\t\tA flow of electric charge is known as _________.\n\n");
+                            printf("\t\t\tA.Charge \n\t\t\tB.Current \n\t\t\tC.Conductance \n\t\t\tD.Resistance\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='B')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Current'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Current'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 31:
+                            printf("\n\n\n\n\n\t\t\tRobert Frost's poem \"The Road Not Taken\" refers to which of these?\n\n");
+                            printf("\t\t\tA.Choice not made \n\t\t\tB.Vacations not taken \n\t\t\tC.Being Lost \n\t\t\tD.Being Indecisive\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='A')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='A')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Choice Not Made'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Choice Not Made'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 32:
+                            printf("\n\n\n\n\n\t\t\tThe earliest surviving man-made sculpture is made of ___________.\n\n");
+                            printf("\t\t\tA.Styrofoam \n\t\t\tB.Plastic \n\t\t\tC.Stone \n\t\t\tD.Wood\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='C')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='C')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Stone'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Stone'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 33:
+                            printf("\n\n\n\n\n\t\t\tWhat type of pastry would you use in a Bakewell tart?\n\n");
+                            printf("\t\t\tA.Choux \n\t\t\tB.Filo \n\t\t\tC.Rough Puff \n\t\t\tD.Shortcrust\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='D')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='D')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Shortcrust'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Shortcrust'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 34:
+                            printf("\n\n\n\n\n\t\t\tWhich liquid is rice cooked in to make rice pudding?\n\n");
+                            printf("\t\t\tA.Milk \n\t\t\tB.Orange Juice \n\t\t\tC.Water \n\t\t\tD.Wine\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='A')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='A')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Milk'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Milk'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 35:
+                            printf("\n\n\n\n\n\t\t\tWhich of these can be used to drive an electrical generator?\n\n");
+                            printf("\t\t\tA.Carbon \n\t\t\tB.Calcium Carbonate \n\t\t\tC.Metal \n\t\t\tD.Steam\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='D')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='D')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Steam'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Steam'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 36:
+                            printf("\n\n\n\n\n\t\t\tSailors ate oranges and limes to prevent which disease?\n\n");
+                            printf("\t\t\tA.Flu \n\t\t\tB.Measles \n\t\t\tC.Rickets \n\t\t\tD.Scurvy\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='D')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='D')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Scurvy'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Scurvy'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 37:
+                            printf("\n\n\n\n\n\t\t\tCroquet is played using? \n\n");
+                            printf("\t\t\tA.Baton \n\t\t\tB.Batting Stick \n\t\t\tC.Club \n\t\t\tD.Mallet\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='D')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='D')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mallet'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mallet'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 38:
+                            printf("\n\n\n\n\n\t\t\tAfter which sailor Columbia was named?\n\n");
+                            printf("\t\t\tA.Amerigo Vespucci \n\t\t\tB.Christopher Columbus \n\t\t\tC.Juan Ponce de Leon \n\t\t\tD.Marco Polo\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='B')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Christopher Columbus'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Christopher Columbus'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 39:
+                            printf("\n\n\n\n\n\t\t\tGuess the international bank from the image.\n\n");
+                            system("start quiz10.png");
+                            getch();
+                            printf("\t\t\tA.Bank of America \n\t\t\tB.Royal Bank of Scotland \n\t\t\tC.ICICI Bank \n\t\t\tD.Bank of Scotland\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='B')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Royal Bank of Scotland'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Royal Bank of Scotland'.");
+                                getch();
+                                goto score;
+                                break;
+                            }
+                        case 40:
+                            printf("\n\n\n\n\n\t\t\tGuess the country from the video.\n\n");
+                            system("start quiz11.mp4");
+                            getch();
+                            printf("\t\t\tA.South Africa \n\t\t\tB.Singapore \n\t\t\tC.Russia \n\t\t\tD.Japan\n\n\n");
+                            if(countf==0){
+                                printf("\t\t\tF for 50:50\n");
+                            }
+                            if(countr==0){
+                                printf("\t\t\tR for Replace\n\n\n");
+                            }
+                            timer();
+                            if(toupper(getch())=='C')
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                getch();
+                                counter++;
+                                break;
+                            }
+                            else if(toupper(getch())=='F'){
+                                system("cls");
+                                fiftyFifty(n,countf);
+                                timer();
+                                countf=1;
+                                if(toupper(getch())=='C')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Russia'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else if(toupper(getch())=='R'){
+                                system("cls");
+                                replace(countr);
+                                countr=1;
+                                if(toupper(getch())=='B')
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect.");
+                                    getch();
+                                    counter+=0.5;
+                                    break;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Mars'.");
+                                    getch();
+                                    goto score;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                system("cls");
+                                printf("\n\n\n\n\n\n\n\n\t\t\tWrong Answer. Correct answer is 'Russia'.");
                                 getch();
                                 goto score;
                                 break;
