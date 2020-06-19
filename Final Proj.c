@@ -3,6 +3,7 @@
 DSA PROJECT
 BY: GAGAN CHORDIA
 REG.NO: 19BCE0788
+Work from 13
 */
 
 #include<stdio.h>
@@ -62,6 +63,23 @@ void reset_score() //resets the score to zero and appoints NONE to the name.
     fclose(f);
 }
 
+void timer(){
+    int timer,x;
+    for(timer=30;timer>=0;timer--)
+    {
+        printf(" \rTime left: %02d",timer);
+        Sleep(1000); //changes the value of timer after 1000 milliseconds
+        if(x=kbhit()) //if any button is pressed the timer will stop
+        {
+            break;
+        }
+        if(timer<=5)//during the last 5 seconds of timer a beeping sound will be produced
+        {
+            Beep(850,950); // beeps produced between 850 and 950 milliseconds
+        }
+    }
+}
+
 void intro() //provides the introduction of the game.
 {
     system("cls");
@@ -79,7 +97,6 @@ void intro() //provides the introduction of the game.
 }
 int fiftyFifty(int n, int countf){ // eliminates any 2 wrong options for a particular question.
     if(countf!=1){
-        countf=1;
         switch(n){
             case 1:
                 printf("\n\n\n\n\n\t\t\tFilm and TV institute of India is located at\n\n");
@@ -195,22 +212,26 @@ int fiftyFifty(int n, int countf){ // eliminates any 2 wrong options for a parti
                 break;
         }
     }
-    return countf;
+    else{
+        printf("\n\n\n\n\n\t\t\tWrong Answer.\n\t\t\tPress Enter to view the score.");
+    }
 }
 int replace(int countr) //replaces the current question with a new question
 {
     if(countr==0){
         printf("\n\n\n\n\n\t\t\tWhich planet is known as the Red Planet?\n\n");
         printf("\t\t\tA.Jupiter \n\t\t\tB.Mars \n\t\t\tC.Mercury\n\t\t\tD.None of these\n\n\n");
+        timer();
     }
-    countr=1;
-    return countr;
+    else{
+        printf("\n\n\n\n\n\t\t\tWrong Answer.\n\t\t\tPress any Enter to view the score.");
+    }
 }
 
 int main()
 {
     system("color F0"); // changes the background and font color, currently White - Background and Black - Font color
-    int n,i,timer,x=0,countf=0,countr=0;
+    int n,i,countf=0,countr=0;
     float total_score=0,counter=0;
     char name[50],control_menu,pw[100];
     srand(time(NULL));
@@ -283,19 +304,7 @@ int main()
                     {
                         case 1: printf("\n\n\n\n\n\t\t\tWhich of the following is not a vegetable?\n\n");
                                 printf("\t\t\t A.Tomato \n\t\t\t B.Cauliflower \n\t\t\t C.Cucumber\n\t\t\t D.Okra\n\n\n");
-                                for(timer=30;timer>=0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000); //changes the value of timer after 1000 milliseconds
-                                    if(x=kbhit()) //if any button is pressed the timer will stop
-                                    {
-                                        break;
-                                    }
-                                    if(timer<=5)//during the last 5 seconds of timer a beeping sound will be produced
-                                    {
-                                        Beep(850,950); // beeps produced between 850 and 950 milliseconds
-                                    }
-                                }
+                                timer();
                                 if(toupper(getch())=='A')
                                 {
                                     system("cls");
@@ -314,19 +323,7 @@ int main()
                         case 2:
                                 printf("\n\n\n\n\n\t\t\tWhich is the third highest mountain in the world?\n\n");
                                 printf("\t\t\t A.Mt.Everest \n\t\t\t B.Mt.Kilimanjaro \n\t\t\t C.Mt.Kanchanjungha \n\t\t\t D.Mt.Makalu\n\n\n");
-                                for(timer=30;timer>=0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<=5)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 if(toupper(getch())=='C')
                                 {
                                     system("cls");
@@ -345,19 +342,7 @@ int main()
                             case 3:
                                 printf("\n\n\n\n\n\t\t\tWhat is the national game of India?\n\n");
                                 printf("\t\t\t A.Hockey \n\t\t\t B.Cricket \n\t\t\t C.Kabbadi \n\t\t\t D.Wrestling\n\n\n");
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 if(toupper(getch())=='A')
                                 {
                                     system("cls");
@@ -376,19 +361,7 @@ int main()
                         case 4:
                                 printf("\n\n\n\n\n\t\t\tWhich of the following Bollywood movie has the longest show time?\n\n");
                                 printf("\t\t\t A.Lagaan \n\t\t\t B.Mera Naam Joker \n\t\t\t C.Sangam \n\t\t\t D.Tamas\n\n\n");
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 if(toupper(getch())=='D')
                                 {
                                     system("cls");
@@ -409,19 +382,7 @@ int main()
                                 system("start test.jpg");
                                 getch();
                                 printf("\t\t\t A.Agra \n\t\t\t B.Pisa \n\t\t\t C.Rio de Janeiro \n\t\t\t D.Jordan\n\n\n");
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 if(toupper(getch())=='B')
                                 {
                                     system("cls");
@@ -440,19 +401,7 @@ int main()
                         case 6:
                             printf("\n\n\n\n\n\t\t\tWhich of the following country is known as 'The Land Of Rising Sun'?\n\n");
                             printf("\t\t\tA.China \n\t\t\tB.USA\n\t\t\tC.Japan\n\t\t\tD.Bangladesh\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -470,19 +419,7 @@ int main()
                         case 7:
                             printf("\n\n\n\n\n\t\t\tWho is the inventor of electricity?\n\n");
                             printf("\t\t\tA.Benjamin Franklin \n\t\t\tB. Issac Newton \n\t\t\tC. J.J Thompson \n\t\t\tD. C.V. Raman\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -500,19 +437,7 @@ int main()
                         case 8:
                             printf("\n\n\n\n\n\t\t\tWhich of the following countries is the largest democracy of the world?\n\n");
                             printf("\t\t\tA.Russia \n\t\t\tB.Japan \n\t\t\tC.India \n\t\t\tD.USA\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -530,19 +455,7 @@ int main()
                         case 9:
                             printf("\n\n\n\n\n\t\t\tWhich is the most sensitive organ in the human body?\n\n");
                             printf("\t\t\tA.Ear \n\t\t\tB.Skin \n\t\t\tC.Nose \n\t\t\tD.Tongue\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -560,19 +473,7 @@ int main()
                         case 10:
                             printf("\n\n\n\n\n\t\t\tWhat type of tree do dates grow on?\n\n");
                             printf("\t\t\tA.Coconut \n\t\t\tB.Pine \n\t\t\tC.Birch \n\t\t\tD.Palm\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='D'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -590,19 +491,7 @@ int main()
                         case 11:
                             printf("\n\n\n\n\n\t\t\tWhat is the 15th alphabet of the English language?\n\n");
                             printf("\t\t\tA. O \n\t\t\tB. M \n\t\t\tC. N \n\t\t\tD. P\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -620,19 +509,7 @@ int main()
                         case 12:
                             printf("\n\n\n\n\n\t\t\tWho was the first President of India?\n\n");
                             printf("\t\t\tA. APJ Abdul Kalam \n\t\t\tB. Partibha Patel \n\t\t\tC. Rajendra Prasad \n\t\t\tD. Sarvapalli Radhakrishna\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -650,19 +527,7 @@ int main()
                         case 13:
                             printf("\n\n\n\n\n\t\t\tWhere does a pig live?\n\n");
                             printf("\t\t\tA.Ranch \n\t\t\tB.Sty \n\t\t\tC.Stable \n\t\t\tD.Shed\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -680,19 +545,7 @@ int main()
                         case 14:
                             printf("\n\n\n\n\n\t\t\tWhat colour symbolises peace?\n\n");
                             printf("\t\t\tA.Black \n\t\t\tB.Green \n\t\t\tC.Red \n\t\t\tD.White\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='D'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -710,19 +563,7 @@ int main()
                         case 15:
                             printf("\n\n\n\n\n\t\t\tWhich is the most spoken language in the world?\n\n");
                             printf("\t\t\tA.Mandarin \n\t\t\tB.Spanish \n\t\t\tC.English \n\t\t\tD.French\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -740,19 +581,7 @@ int main()
                         case 16:
                             printf("\n\n\n\n\n\t\t\t'Stars and Stripes' is the nickname of which country?\n\n");
                             printf("\t\t\tA.United Kingdom \n\t\t\tB.New Zealand \n\t\t\tC.United States of America \n\t\t\tD.Australia\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -772,19 +601,7 @@ int main()
                             system("start test2.jpg");
                             getch();
                             printf("\t\t\tA.Vitruvian Man \n\t\t\tB.Venus de Milo \n\t\t\tC.Pieta \n\t\t\tD.Mona Lisa\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='D'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -802,19 +619,7 @@ int main()
                         case 18:
                             printf("\n\n\n\n\n\t\t\tWhat is Harry Potter's middle name?\n\n");
                             printf("\t\t\tA.James \n\t\t\tB.Robert \n\t\t\tC.Peter \n\t\t\tD.Alex\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -832,19 +637,7 @@ int main()
                         case 19:
                             printf("\n\n\n\n\n\t\t\tWhat is a group of crows called?\n\n");
                             printf("\t\t\tA.Raft \n\t\t\tB.Murder \n\t\t\tC.Wake \n\t\t\tD.Battery\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -864,19 +657,7 @@ int main()
                             system("start test3.mp4");
                             getch();
                             printf("\t\t\tA.Walrus \n\t\t\tB.Seal \n\t\t\tC.Sea lion \n\t\t\tD.Skunks\n\n\n");
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C'){
                                 system("cls");
                                 printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\tCorrect");
@@ -923,19 +704,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for replace");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf("\t\t\t\t\t \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A')
                             {
                                 system("cls");
@@ -947,19 +716,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 getch();
                                 if(toupper(getch())=='A')
@@ -982,19 +739,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1032,19 +776,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C')
                             {
                                 system("cls");
@@ -1056,19 +788,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='C')
                                 {
@@ -1089,19 +809,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1136,19 +843,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='D')
                             {
                                 system("cls");
@@ -1160,19 +855,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='D')
                                 {
@@ -1194,19 +877,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1244,19 +914,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C')
                             {
                                 system("cls");
@@ -1268,19 +926,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='C')
                                 {
@@ -1302,19 +948,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1350,19 +983,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='D')
                             {
                                 system("cls");
@@ -1374,19 +995,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='D')
                                 {
@@ -1408,19 +1017,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1456,19 +1052,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B')
                             {
                                 system("cls");
@@ -1480,19 +1064,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1514,19 +1086,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1564,19 +1123,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A')
                             {
                                 system("cls");
@@ -1588,19 +1135,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='A')
                                 {
@@ -1621,19 +1156,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1668,19 +1190,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A')
                             {
                                 system("cls");
@@ -1692,19 +1202,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='A')
                                 {
@@ -1726,19 +1224,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1774,19 +1259,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B')
                             {
                                 system("cls");
@@ -1798,19 +1271,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1832,19 +1293,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1880,19 +1328,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A')
                             {
                                 system("cls");
@@ -1904,19 +1340,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='A')
                                 {
@@ -1938,19 +1362,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -1986,19 +1397,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C')
                             {
                                 system("cls");
@@ -2010,19 +1409,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='C')
                                 {
@@ -2044,19 +1431,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2092,19 +1466,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B')
                             {
                                 system("cls");
@@ -2116,19 +1478,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2150,19 +1500,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2200,19 +1537,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='D')
                             {
                                 system("cls");
@@ -2224,19 +1549,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='D')
                                 {
@@ -2258,19 +1571,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2306,19 +1606,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C')
                             {
                                 system("cls");
@@ -2330,19 +1618,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='C')
                                 {
@@ -2364,19 +1640,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2414,19 +1677,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A')
                             {
                                 system("cls");
@@ -2438,19 +1689,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='A')
                                 {
@@ -2472,19 +1711,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2520,19 +1746,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C')
                             {
                                 system("cls");
@@ -2544,19 +1758,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='C')
                                 {
@@ -2578,19 +1780,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2626,19 +1815,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C')
                             {
                                 system("cls");
@@ -2650,19 +1827,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='C')
                                 {
@@ -2684,19 +1849,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2732,19 +1884,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B')
                             {
                                 system("cls");
@@ -2756,19 +1896,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2790,19 +1918,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2840,19 +1955,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A')
                             {
                                 system("cls");
@@ -2864,19 +1967,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='A')
                                 {
@@ -2898,19 +1989,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -2946,19 +2024,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B')
                             {
                                 system("cls");
@@ -2970,19 +2036,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3004,19 +2058,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3052,19 +2093,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='D')
                             {
                                 system("cls");
@@ -3076,19 +2105,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='D')
                                 {
@@ -3110,19 +2127,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3158,19 +2162,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='A')
                             {
                                 system("cls");
@@ -3182,19 +2174,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='A')
                                 {
@@ -3216,19 +2196,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3266,19 +2233,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B')
                             {
                                 system("cls");
@@ -3290,19 +2245,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3324,19 +2267,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3372,19 +2302,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B')
                             {
                                 system("cls");
@@ -3396,19 +2314,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3430,19 +2336,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3478,19 +2371,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C')
                             {
                                 system("cls");
@@ -3502,19 +2383,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='C')
                                 {
@@ -3536,19 +2405,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3586,19 +2442,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='D')
                             {
                                 system("cls");
@@ -3610,19 +2454,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='D')
                                 {
@@ -3644,19 +2476,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3692,19 +2511,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='C')
                             {
                                 system("cls");
@@ -3716,19 +2523,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='C')
                                 {
@@ -3750,19 +2545,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3798,19 +2580,7 @@ int main()
                             if(countr==0){
                                 printf("\t\t\tR for Replace\n\n\n");
                             }
-                            for(timer=30;timer>0;timer--)
-                            {
-                                printf(" \rTime left: %02d",timer);
-                                Sleep(1000);
-                                if(x=kbhit())
-                                {
-                                    break;
-                                }
-                                if(timer<6)
-                                {
-                                    Beep(850,950);
-                                }
-                            }
+                            timer();
                             if(toupper(getch())=='B')
                             {
                                 system("cls");
@@ -3822,19 +2592,7 @@ int main()
                             else if(toupper(getch())=='F'){
                                 system("cls");
                                 fiftyFifty(n,countf);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
+                                timer();
                                 countf=1;
                                 if(toupper(getch())=='B')
                                 {
@@ -3856,19 +2614,6 @@ int main()
                             else if(toupper(getch())=='R'){
                                 system("cls");
                                 replace(countr);
-                                for(timer=30;timer>0;timer--)
-                                {
-                                    printf(" \rTime left: %02d",timer);
-                                    Sleep(1000);
-                                    if(x=kbhit())
-                                    {
-                                        break;
-                                    }
-                                    if(timer<6)
-                                    {
-                                        Beep(850,950);
-                                    }
-                                }
                                 countr=1;
                                 if(toupper(getch())=='B')
                                 {
