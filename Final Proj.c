@@ -3,7 +3,6 @@
 DSA PROJECT
 BY: GAGAN CHORDIA
 REG.NO: 19BCE0788
-Work from 13
 */
 
 #include<stdio.h>
